@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Roboto:wght@300;400;700;900&display=swap');
+
+@font-face {
+  font-family: 'Mantou';
+  src: url('../fonts/MantouSans-Regular.ttf') format("truetype");
+}
+
+$breakpoints:(
+  'mobile' : (max-width: 576px),
+  'tablet' : (max-width: 768px),
+  'desktop' : (max-width: 1280px),
+) !default;
+
+$primary-color: #DA7D4A;
+$primary-text: #334155; 
+$secondary-text: #64748B;
+$primary-bg-color: #FDFCFB;
+$secondary-bg-color: #F7ECE1;
+$primary-light: #ffffff;
+
+@mixin bg-gradient-x {
+  background: linear-gradient(to right, #E5793B, #FF4185)
+}
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: 'Noto Sans TC', sans-serif;
+  background: $primary-bg-color;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  text-transform: unset;
+}
+
+.font-mantou {
+  font-family: 'Mantou';
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  width: min(100%, 1320px);
+  @include respond-to('tablet') {
+    width: min(100%, 720px);
+  }
+  @include respond-to('mobile') {
+    width: min(100%, 540px);
+  }
+}
+
+.header {
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  .headerNav {
+    padding: .75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-light;
+    border-radius: 1rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $primary-color;
+    .logoImg {
+      margin-right: 0.5rem;
+      line-height: 0;
+    }
+  }
+}
+
+.mainNav {
+  @include respond-to('desktop') {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    .nav-item {
+      margin: 0 0.5rem;
+    }
+    .nav-link {
+      display: block;
+      padding: 0.5rem;
+      color: $primary-text;
+      transition: all .3s ease 0s;
+    }
+  }
+}
+
+.socailNav {
+  .nav {
+    display: flex;
+    justify-content: center;
+  }
+  .nav-item {
+    margin-right: 1rem;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  .nav-link {
+    font-size: 0;
+    position: relative;
+    transition: all .3s ease 0s;
+  }
+}
+
+.ball {
+  @include bg-gradient-x;
+  display: block;
+  border-radius: 50%;
+  color: $primary-light;
+  text-align: center;
+}
+
+.banner {
+  .textArea {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 6rem;
+    @include respond-to('tablet') {
+      padding-top: 2rem;
+    }
+  }
+
+  h1 {
+    @include bg-gradient-x;
+    font-size: 6rem;
+    line-height: 1.05;
+    letter-spacing: 2px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+
+  .bannerText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .titleBlock {
+      padding: 0.7rem 1rem;
+      border-radius: 1rem;
+      font-size: 1.75rem;
+      font-weight: 700;
+      background-color: $primary-text;
+      color: $primary-light;
+      margin-right: 1rem;
+    }
+  }
+
+  .ball {
+    margin-right: 1rem;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+  }
+}

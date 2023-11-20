@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Roboto:wght@300;400;700;900&display=swap");
+@font-face {
+  font-family: "Mantou";
+  src: url("../fonts/MantouSans-Regular.ttf") format("truetype");
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-family: "Noto Sans TC", sans-serif;
+  background: #FDFCFB;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  text-transform: unset;
+}
+
+.font-mantou {
+  font-family: "Mantou";
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 0.75rem;
+  width: min(100%, 1320px);
+}
+@media (max-width: 768px) {
+  .container {
+    width: min(100%, 720px);
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    width: min(100%, 540px);
+  }
+}
+
+.header {
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+}
+.header .headerNav {
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #DA7D4A;
+}
+.header .logo .logoImg {
+  margin-right: 0.5rem;
+  line-height: 0;
+}
+
+@media (max-width: 1280px) {
+  .mainNav {
+    display: none;
+  }
+}
+.mainNav .nav {
+  display: flex;
+}
+.mainNav .nav .nav-item {
+  margin: 0 0.5rem;
+}
+.mainNav .nav .nav-link {
+  display: block;
+  padding: 0.5rem;
+  color: #334155;
+  transition: all 0.3s ease 0s;
+}
+
+.socailNav .nav {
+  display: flex;
+  justify-content: center;
+}
+.socailNav .nav-item {
+  margin-right: 1rem;
+}
+.socailNav .nav-item:last-child {
+  margin-right: 0;
+}
+.socailNav .nav-link {
+  font-size: 0;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+.ball {
+  background: linear-gradient(to right, #E5793B, #FF4185);
+  display: block;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+}
+
+.banner .textArea {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 6rem;
+}
+@media (max-width: 768px) {
+  .banner .textArea {
+    padding-top: 2rem;
+  }
+}
+.banner h1 {
+  background: linear-gradient(to right, #E5793B, #FF4185);
+  font-size: 6rem;
+  line-height: 1.05;
+  letter-spacing: 2px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+.banner .bannerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner .bannerText .titleBlock {
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background-color: #334155;
+  color: #ffffff;
+  margin-right: 1rem;
+}
+.banner .ball {
+  margin-right: 1rem;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+}
