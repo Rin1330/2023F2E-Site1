@@ -156,9 +156,9 @@ a {
 
 .banner {
   .textArea {
-    margin: 0 auto;
+    margin: 0 auto 0.5rem;
     text-align: center;
-    padding-top: 6rem;
+    padding: 6rem 0 1rem;
     @include respond-to('tablet') {
       padding-top: 2rem;
     }
@@ -179,14 +179,25 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    .titleBlock {
-      padding: 0.7rem 1rem;
+    .textBlock {
+      padding: 0.75rem 1rem;
       border-radius: 1rem;
-      font-size: 1.75rem;
       font-weight: 700;
+    }
+    .titleBlock {
+      font-size: 1.75rem;
       background-color: $primary-text;
       color: $primary-light;
       margin-right: 1rem;
+    }
+    .nameBlock {
+      display: flex;
+      align-items: center;
+      font-size: 2.5rem;
+      color: $primary-color;
+      background-color: rgba($color: #ffffff, $alpha: 0.9);
+      border: 1px solid #ffffff;
+      box-shadow: 0px 4px 12px 0px rgba(163,180,203,0.2);
     }
   }
 

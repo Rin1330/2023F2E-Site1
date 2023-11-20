@@ -123,9 +123,9 @@ a {
 }
 
 .banner .textArea {
-  margin: 0 auto;
+  margin: 0 auto 0.5rem;
   text-align: center;
-  padding-top: 6rem;
+  padding: 6rem 0 1rem;
 }
 @media (max-width: 768px) {
   .banner .textArea {
@@ -147,14 +147,25 @@ a {
   justify-content: center;
   align-items: center;
 }
-.banner .bannerText .titleBlock {
-  padding: 0.7rem 1rem;
+.banner .bannerText .textBlock {
+  padding: 0.75rem 1rem;
   border-radius: 1rem;
-  font-size: 1.75rem;
   font-weight: 700;
+}
+.banner .bannerText .titleBlock {
+  font-size: 1.75rem;
   background-color: #334155;
   color: #ffffff;
   margin-right: 1rem;
+}
+.banner .bannerText .nameBlock {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  color: #DA7D4A;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ffffff;
+  box-shadow: 0px 4px 12px 0px rgba(163, 180, 203, 0.2);
 }
 .banner .ball {
   margin-right: 1rem;
