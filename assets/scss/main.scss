@@ -6,8 +6,8 @@
 }
 
 $breakpoints:(
-  'mobile' : (max-width: 576px),
-  'tablet' : (max-width: 768px),
+  'mobile' : (max-width: 768px),
+  'tablet' : (max-width: 992px),
   'desktop' : (max-width: 1280px),
 ) !default;
 
@@ -20,6 +20,13 @@ $primary-light: #ffffff;
 
 @mixin bg-gradient-x {
   background: linear-gradient(to right, #E5793B, #FF4185)
+}
+
+@mixin text-bg-gradient-x {
+  @include bg-gradient-x;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @mixin respond-to($breakpoint) {
@@ -47,11 +54,30 @@ body {
   line-height: 1.5;
   font-family: 'Noto Sans TC', sans-serif;
   background: $primary-bg-color;
+  color: $primary-text;
 }
 
 h1,h2,h3,h4,h5,h6,p {
   margin: 0;
   padding: 0;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 1.437;
+  letter-spacing: 2px;
+  @include respond-to('tablet') {
+    font-size: 3.25rem;
+    line-height: 1.46;
+  }
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  @include respond-to('tablet') {
+    font-size: 1.5rem;
+  }
 }
 
 ul, li {
@@ -71,9 +97,28 @@ a {
   text-transform: unset;
 }
 
+.d-mobile-block {
+  display: none; 
+  @include respond-to('tablet') {
+    display: block;
+  }
+}
+
 .font-mantou {
   font-family: 'Mantou';
   font-weight: 400;
+}
+
+.text-primary {
+  color: $primary-color;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-2 {
+  background-color: $secondary-bg-color;
 }
 
 .container {
@@ -88,9 +133,32 @@ a {
   }
 }
 
+.labelBox {
+  font-weight: 700;
+  padding: .5rem .75rem;
+  background: $primary-text;
+  color: $primary-light;
+  border-radius: .5rem;
+}
+
+.text-gradient-x {
+  @include text-bg-gradient-x;
+}
+
 .header {
   padding: 1rem 1.5rem;
-  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  @include respond-to('mobile') {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
   .headerNav {
     padding: .75rem 1.5rem;
     display: flex;
@@ -121,6 +189,7 @@ a {
     }
     .nav-link {
       display: block;
+      font-size: 1.125rem;
       padding: 0.5rem;
       color: $primary-text;
       transition: all .3s ease 0s;
@@ -155,6 +224,11 @@ a {
 }
 
 .banner {
+  margin: 99px 0 0 0;
+  background-color: $primary-light;
+  @include respond-to('mobile') {
+    margin: 0 0 0 0;
+  }
   .textArea {
     margin: 0 auto 0.5rem;
     text-align: center;
@@ -162,23 +236,30 @@ a {
     @include respond-to('tablet') {
       padding-top: 2rem;
     }
+    @include respond-to('mobile') {
+
+    }
   }
 
   h1 {
-    @include bg-gradient-x;
+    @include text-bg-gradient-x;
     font-size: 6rem;
     line-height: 1.05;
     letter-spacing: 2px;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
+    @include respond-to('tablet') {
+      font-size: 3.25rem;
+      margin-bottom: .5rem;
+    }
   }
 
   .bannerText {
     display: flex;
     justify-content: center;
     align-items: center;
+    @include respond-to('mobile') {
+      flex-direction: column;
+    }
     .textBlock {
       padding: 0.75rem 1rem;
       border-radius: 1rem;
@@ -189,6 +270,10 @@ a {
       background-color: $primary-text;
       color: $primary-light;
       margin-right: 1rem;
+      @include respond-to('tablet') {
+        font-size: 1.25rem;
+        margin-right: 0;
+      }
     }
     .nameBlock {
       display: flex;
@@ -198,13 +283,123 @@ a {
       background-color: rgba($color: #ffffff, $alpha: 0.9);
       border: 1px solid #ffffff;
       box-shadow: 0px 4px 12px 0px rgba(163,180,203,0.2);
+      @include respond-to('tablet') {
+        font-size: 1.75rem;
+      }
+      .ball {
+        margin-right: 1rem;
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        @include respond-to('tablet') {
+          font-size: 25px;
+          width: 40px;   
+          height: 40px;
+        }
+      }
     }
   }
 
-  .ball {
-    margin-right: 1rem;
-    font-size: 2rem;
-    width: 50px;
-    height: 50px;
+  .bannerImg {
+    position: relative;
+    text-align: center;
+    margin-top: 130px;
+    .bannerBg {
+      max-height: 400px;
+    }
+    .bannerPerson {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      &-img {
+        line-height: 0;
+        transition: all .3s ease 0s;
+      }
+    }
+  }
+}
+
+.solgan {
+  padding: 10px;
+  background-color: $primary-color;
+  overflow: hidden;
+  p {
+    font-size: 4rem;
+    line-height: 1.04;
+    letter-spacing: 2px;
+    color: $primary-light;
+    white-space: nowrap;
+    animation: wordScrollX 30s linear infinite;
+    animation-play-state: running;
+  }
+}
+
+@keyframes wordScrollX {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.sectionBlk {
+  padding: 6.5rem 0;
+  @include respond-to('tablet') {
+    padding: 4rem 0;
+  }
+}
+
+.advocate {
+  .content {
+    display: flex;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    @include respond-to('tablet') {
+      flex-direction: column;
+    }
+  }
+  .content-text {
+    flex: 1;
+    background-color: $primary-light;
+    padding: 4rem 2.5rem;
+    @include respond-to('tablet') {
+      padding: 2.5rem 1.5rem;
+    }
+    h3 {
+      margin-bottom: 2rem;
+    }
+  }
+  .text-center {
+    margin-bottom: 2rem;
+  }
+  .advocateImg {
+    width: calc((99% / 2) - 24px);
+    @include respond-to('tablet') {
+      width: 100%;
+    }
+  }
+}
+
+.events {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  .text-center {
+    margin-bottom: 4rem;
+    @include respond-to('tablet') {
+      margin-bottom: 2.5rem;
+    }
+  }
+  .content {
+    display: flex;
+    .mainNews {
+      display: block;
+    }
+    .listNews {
+      flex: 1;
+      margin-left: 24px;
+    }
   }
 }
