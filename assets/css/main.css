@@ -191,6 +191,8 @@ a {
   border-radius: 1rem;
 }
 .header .logo {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
   color: #DA7D4A;
@@ -705,13 +707,24 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 992px) {
+  .fundraising .buttonBox {
+    justify-content: center;
+  }
+}
 .fundraising .buttonBox .imageWrap {
   max-width: 224px;
+  flex: 1;
+  margin-left: 1rem;
 }
 @media (max-width: 992px) {
   .fundraising .buttonBox .imageWrap {
     max-width: 126px;
   }
+}
+
+.footer {
+  background: #F7ECE1;
 }
 
 .swiper-pagination {
@@ -762,4 +775,4 @@ a {
 .swiper-button-prev:after,
 .swiper-button-next:after {
   content: none;
-}
+}/*# sourceMappingURL=main.css.map */

@@ -216,6 +216,8 @@ a {
     border-radius: 1rem;
   }
   .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: 700;
     color: $primary-color;
@@ -694,13 +696,27 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include respond-to('tablet') {
+      justify-content: center;
+    }
+    .btn {
+      @include respond-to('moblie') {
+        padding: .75rem 1.125rem;
+      }
+    }
     .imageWrap {
       max-width: 224px;
+      flex: 1;
+      margin-left: 1rem;
       @include respond-to('tablet') {
         max-width: 126px;
       }
     }
   }
+}
+
+.footer {
+  background: $secondary-bg-color;
 }
 
 // swiper 
