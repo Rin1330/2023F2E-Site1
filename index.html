@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>喵立翰 - 立委競選官網</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
@@ -84,9 +85,11 @@
       </div>
     </div>
   </section>
+  
   <section class="solgan">
     <p class="font-mantou">為喵星人，護台灣！ 從喵的眼中，看見台灣 喵的未來，人的希望</p>
   </section>
+
   <section class="sectionBlk advocate bg-2">
     <div class="container">
       <div class="content">
@@ -104,58 +107,206 @@
       </div>
     </div>
   </section>
+
   <section class="sectionBlk events">
-    <div class="text-center">
-      <span class="labelBox">LATEST EVENTS</span>
-      <h2 class="font-mantou text-gradient-x">最新活動</h2>
-    </div>
-    <div class="content">
-      <a class="mainNews" href="javascript:;">
-        <div class="mainNewsImg">
-          <img src="./assets/images/Frame 32.png" alt="">
+    <div class="container">
+      <div class="text-center">
+        <span class="labelBox">LATEST EVENTS</span>
+        <h2 class="font-mantou text-gradient-x">最新活動</h2>
+      </div>
+      <div class="content">
+        <a class="mainNews" href="javascript:;">
+          <div class="mainNewsImg">
+            <img src="./assets/images/Frame 32.png" alt="">
+          </div>
+          <div class="mainNewsBody">
+            <time class="date">2023/12/26</time>
+            <h3 class="card-title">參與台北寵物論壇，爭取貓咪友善環境</h3>
+            <p class="card-text">炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的 VIP 休憩空間。</p>
+          </div>
+        </a>
+        <div class="listNews">
+          <ul class="list">
+            <li class="list-item">
+              <a href="javascript:;" class="card">
+                <div class="card-img"><img src="./assets/images/cover1.png" alt=""></div>
+                <div class="card-body">
+                  <time class="date">2023/12/24</time>
+                  <h3 class="card-title">掃街模式開啟！帶著你的貓耳，來和我一起走！</h3>
+                  <p class="card-text">街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！</p>
+                </div>
+              </a>
+            </li>
+            <li class="list-item">
+              <a href="javascript:;" class="card">
+                <div class="card-img"><img src="./assets/images/cover2.png" alt=""></div>
+                <div class="card-body">
+                  <time class="date">2023/12/20</time>
+                  <h3 class="card-title">收容所模特兒大比拼！</h3>
+                  <p class="card-text">今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！</p>
+                </div>
+              </a>
+            </li>
+            <li class="list-item">
+              <a href="javascript:;" class="card">
+                <div class="card-img"><img src="./assets/images/cover3.png" alt=""></div>
+                <div class="card-body">
+                  <time class="date">2023/12/26</time>
+                  <h3 class="card-title">參與台北寵物論壇，爭取貓咪友善環境</h3>
+                  <p class="card-text">炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <button class="btn btn-secondary" role="button">查看更多<span class="material-symbols-outlined arrow">arrow_forward</span></button>
         </div>
-        <time>2023/12/26</time>
-        <h3>參與台北寵物論壇，爭取貓咪友善環境</h3>
-        <p>炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的 VIP 休憩空間。</p>
-      </a>
-      <div class="listNews">
-        <ul class="list">
-          <li class="list-item">
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionBlk policy">
+    <div class="container">
+      <div class="text-center">
+        <span class="labelBox">POLICY ISSUES</span>
+        <h2 class="font-mantou text-gradient-x">政策議題</h2>
+      </div>
+    </div>
+    <div class="cardWrap">
+      <div class="swiper" id="policySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
             <a href="javascript:;" class="card">
-              <div class="card-img"><img src="./assets/images/cover1.png" alt=""></div>
+              <div class="card-image"><img src="./assets/images/policy1@2x.png" alt="policy1"></div>
               <div class="card-body">
-                <time>2023/12/24</time>
-                <h3 class="card-title">掃街模式開啟！帶著你的貓耳，來和我一起走！</h3>
-                <p class="card-text">街上氣氛真的很棒，從小孩到大人，甚至有些狗狗朋友都帶著貓耳來找我握手，真的太可愛了！</p>
+                <span class="card-chip chip-3">喵的保障</span>
+                <h3 class="card-title">為毛孩子謀福利！<br>推動寵物醫療保障方案</h3>
+                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
-          </li>
-          <li class="list-item">
+          </div>
+          <div class="swiper-slide">
             <a href="javascript:;" class="card">
-              <div class="card-img"><img src="./assets/images/cover2.png" alt=""></div>
+              <div class="card-image"><img src="./assets/images/policy3@2x.png" alt="policy1"></div>
               <div class="card-body">
-                <time>2023/12/20</time>
-                <h3 class="card-title">收容所模特兒大比拼！</h3>
-                <p class="card-text">今天的收容所不再是一片寂靜。為了讓更多人認識到這裡的毛孩子，我們舉辦了一場前所未有的「模特兒走秀」！</p>
+                <span class="card-chip">喵的教育</span>
+                <h3 class="card-title">推廣寵物飼養教育，<br>讓愛更加專業</h3>
+                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
-          </li>
-          <li class="list-item">
+          </div>
+          <div class="swiper-slide">
             <a href="javascript:;" class="card">
-              <div class="card-img"><img src="./assets/images/cover3.png" alt=""></div>
+              <div class="card-image"><img src="./assets/images/policy2@2x.png" alt="policy1"></div>
               <div class="card-body">
-                <time>2023/12/26</time>
-                <h3 class="card-title">參與台北寵物論壇，爭取貓咪友善環境</h3>
-                <p class="card-text">炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！</p>
+                <span class="card-chip chip-2">喵的福利</span>
+                <h3 class="card-title">為打造休閒天堂！<br>推廣寵物休閒與娛樂場所</h3>
+                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
-          </li>
-        </ul>
-        <button class="btn" role="button">查看更多</button>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:;" class="card">
+              <div class="card-image"><img src="./assets/images/policy1@2x.png" alt="policy1"></div>
+              <div class="card-body">
+                <span class="card-chip chip-3">喵的保障</span>
+                <h3 class="card-title">為毛孩子謀福利！<br>推動寵物醫療保障方案</h3>
+                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:;" class="card">
+              <div class="card-image"><img src="./assets/images/policy3@2x.png" alt="policy1"></div>
+              <div class="card-body">
+                <span class="card-chip">喵的教育</span>
+                <h3 class="card-title">推廣寵物飼養教育，<br>讓愛更加專業</h3>
+                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="javascript:;" class="card">
+              <div class="card-image"><img src="./assets/images/policy2@2x.png" alt="policy1"></div>
+              <div class="card-body">
+                <span class="card-chip chip-2">喵的福利</span>
+                <h3 class="card-title">為打造休閒天堂！<br>推廣寵物休閒與娛樂場所</h3>
+                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-controller">
+          <div class="swiper-button-prev"><span class="material-symbols-outlined arrow">arrow_back</span></div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"><span class="material-symbols-outlined arrow">arrow_forward</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionBlk fundraising">
+    <div class="container">
+      <div class="content">
+        <div class="col">
+          <h2 class="font-mantou">小額支持喵喵</h2>
+          <h3>您的小筆捐款，是每隻毛孩未來的大大動力！</h3>
+          <div class="buttonBox">
+            <div>
+              <button class="btn" role="button">小額捐款<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+            </div>
+            <div class="imageWrap">
+              <img src="./assets/images/fundraising1.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <h2 class="font-mantou">民眾服務信箱</h2>
+          <h3>親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</h3>
+          <div class="buttonBox">
+            <div>
+              <button class="btn" role="button">填寫表單<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+            </div>
+            <div class="imageWrap">
+              <img src="./assets/images/fundraising2.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sectionBlk">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="font-mantou text-gradient-x" style="margin-bottom: 1.5rem; line-height: 1.04;">台灣的明天 喵先鋪路</h2>
+        <div class="textBlock nameBlock"><span class="ball">3</span>喵立翰 Miao Li-Han</div>
       </div>
     </div>
   </section>
 </body>
-<script></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const policySwiper = new Swiper('#policySwiper', {
+    loop: true,
+    slidesPerView: 'auto',
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: true
+    },
+    centeredSlides: true,
+    pagination: {
+    el: '#policySwiper .swiper-pagination',
+      renderBullet: function (index, className) {
+      return `<a class="${className}">${index + 1}</a>`;
+    },
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '#policySwiper .swiper-button-next',
+    prevEl: '#policySwiper .swiper-button-prev',
+  },
+
+  });
+</script>
 
 </html>

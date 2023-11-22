@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&family=Roboto:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
 @font-face {
   font-family: "Mantou";
   src: url("../fonts/MantouSans-Regular.ttf") format("truetype");
@@ -50,6 +51,7 @@ ul, li {
 }
 
 img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   vertical-align: middle;
@@ -110,6 +112,52 @@ a {
   border-radius: 0.5rem;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  border-radius: 500px;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25;
+  padding: 1rem 1.5rem;
+  color: #334155;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease 0s;
+}
+.btn .arrow {
+  color: #334155;
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  transition: all 0.3s ease 0s;
+}
+.btn.btn-primary {
+  background-color: #DA7D4A;
+  color: #ffffff;
+}
+.btn.btn-primary .arrow {
+  color: #ffffff;
+}
+.btn.btn-primary:hover {
+  background-color: #ffffff;
+  color: #DA7D4A;
+  border: 1px solid #da7d4a;
+}
+.btn.btn-primary:hover .arrow {
+  color: #DA7D4A;
+}
+.btn.btn-secondary {
+  background-color: #f1f5f9;
+}
+.btn:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #DA7D4A;
+}
+.btn:hover .arrow {
+  color: #ffffff;
+}
+
 .text-gradient-x {
   background: linear-gradient(to right, #E5793B, #FF4185);
   -webkit-background-clip: text;
@@ -148,6 +196,7 @@ a {
   color: #DA7D4A;
 }
 .header .logo .logoImg {
+  width: 53px;
   margin-right: 0.5rem;
   line-height: 0;
 }
@@ -185,6 +234,38 @@ a {
   font-size: 0;
   position: relative;
   transition: all 0.3s ease 0s;
+}
+
+.nameBlock {
+  display: inline-flex;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  align-items: center;
+  font-size: 2.5rem;
+  color: #DA7D4A;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ffffff;
+  letter-spacing: -2px;
+  box-shadow: 0px 4px 12px 0px rgba(163, 180, 203, 0.2);
+}
+@media (max-width: 992px) {
+  .nameBlock {
+    font-size: 1.5rem;
+  }
+}
+.nameBlock .ball {
+  margin-right: 1rem;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 992px) {
+  .nameBlock .ball {
+    font-size: 25px;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .ball {
@@ -240,11 +321,6 @@ a {
     flex-direction: column;
   }
 }
-.banner .bannerText .textBlock {
-  padding: 0.75rem 1rem;
-  border-radius: 1rem;
-  font-weight: 700;
-}
 .banner .bannerText .titleBlock {
   font-size: 1.75rem;
   background-color: #334155;
@@ -255,33 +331,6 @@ a {
   .banner .bannerText .titleBlock {
     font-size: 1.25rem;
     margin-right: 0;
-  }
-}
-.banner .bannerText .nameBlock {
-  display: flex;
-  align-items: center;
-  font-size: 2.5rem;
-  color: #DA7D4A;
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid #ffffff;
-  box-shadow: 0px 4px 12px 0px rgba(163, 180, 203, 0.2);
-}
-@media (max-width: 992px) {
-  .banner .bannerText .nameBlock {
-    font-size: 1.75rem;
-  }
-}
-.banner .bannerText .nameBlock .ball {
-  margin-right: 1rem;
-  font-size: 2rem;
-  width: 50px;
-  height: 50px;
-}
-@media (max-width: 992px) {
-  .banner .bannerText .nameBlock .ball {
-    font-size: 25px;
-    width: 40px;
-    height: 40px;
   }
 }
 .banner .bannerImg {
@@ -370,9 +419,13 @@ a {
   }
 }
 
-.events {
-  width: min(100%, 1320px);
-  margin: 0 auto;
+.events .container {
+  padding: 0;
+}
+@media (max-width: 992px) {
+  .events .container {
+    padding: 0 0.75rem;
+  }
 }
 .events .text-center {
   margin-bottom: 4rem;
@@ -385,10 +438,328 @@ a {
 .events .content {
   display: flex;
 }
+@media (max-width: 992px) {
+  .events .content {
+    flex-wrap: wrap;
+  }
+}
 .events .content .mainNews {
   display: block;
+  flex: 0 1 calc(50% - 12px);
+  margin-right: 24px;
+}
+@media (max-width: 992px) {
+  .events .content .mainNews {
+    flex: 0 1 100%;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+.events .content .mainNews .mainNewsImg {
+  background-color: #E2E8F0;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.events .content .mainNews .mainNewsImg img {
+  transition: all 0.3s ease 0s;
+}
+.events .content .mainNews .mainNewsBody {
+  padding-top: 1rem;
+}
+.events .content .mainNews .mainNewsBody .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.events .content .mainNews:hover img {
+  transform: scale(1.15);
 }
 .events .content .listNews {
   flex: 1;
-  margin-left: 24px;
+}
+.events .content .listNews .list {
+  margin-bottom: 1.5rem;
+}
+.events .content .listNews .list-item:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.events .content .listNews .card {
+  display: flex;
+}
+.events .content .listNews .card .card-img {
+  flex: 0 1 calc(33.33% - 1rem);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-right: 1rem;
+}
+.events .content .listNews .card .card-img img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 992px) {
+  .events .content .listNews .card .card-img {
+    flex: 0 1 109px;
+  }
+}
+.events .content .listNews .card .card-body {
+  flex: 1;
+}
+.events .content .listNews .card .card-body .card-title {
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .events .content .listNews .card .card-text {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}
+.events .content .listNews .card:hover img, .events .content .listNews .card:focus img {
+  transform: scale(1.1);
+}
+.events .content .date {
+  display: block;
+  font-size: 0.875rem;
+  color: #64748B;
+  margin-bottom: 0.5rem;
+}
+.events .content .card-title {
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+.events .content .card-text {
+  color: #334155;
+}
+
+.policy {
+  background: #F7ECE1;
+}
+.policy .cardWrap {
+  margin-top: 4rem;
+  overflow: hidden;
+}
+.policy .swiper {
+  position: relative;
+  width: 100%;
+  height: 16.665%;
+  overflow: hidden;
+}
+.policy .swiper-slide {
+  position: relative;
+  width: 50%;
+  opacity: 0.5;
+  transform: scale(0.74);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .policy .swiper-slide {
+    width: 70%;
+  }
+}
+.policy .swiper-backface-hidden .swiper-slide {
+  transform: scale(0.84) translateZ(0);
+}
+.policy .swiper-slide.swiper-slide-active {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+.policy .swiper-backface-hidden .swiper-slide.swiper-slide-active {
+  transform: scale(1) translateZ(0) !important;
+}
+.policy .swiper-controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1.5rem 0;
+}
+.policy .card {
+  display: flex;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+}
+@media (max-width: 992px) {
+  .policy .card {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+}
+.policy .card .card-image {
+  flex: 0 1 58.79%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+@media (max-width: 992px) {
+  .policy .card .card-image {
+    flex: 0 1 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+.policy .card .card-body {
+  flex: 1;
+  margin-left: 2rem;
+}
+@media (max-width: 992px) {
+  .policy .card .card-body {
+    margin-left: 0;
+  }
+}
+.policy .card .card-chip {
+  display: inline-block;
+  border-radius: 500px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  color: rgba(52, 63, 80, 0.8);
+  background-color: #FFDDDD;
+  margin-bottom: 1rem;
+}
+.policy .card .card-chip.chip-2 {
+  background-color: #BEEADB;
+}
+.policy .card .card-chip.chip-3 {
+  background-color: #F7ECE1;
+}
+.policy .card .card-title {
+  font-size: 1.5rem;
+  color: #334155;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.fundraising {
+  background-color: #F7ECE1;
+}
+.fundraising .container {
+  padding: 0;
+}
+@media (max-width: 992px) {
+  .fundraising .container {
+    padding: 0 0.75rem;
+  }
+}
+.fundraising .content {
+  display: flex;
+}
+@media (max-width: 992px) {
+  .fundraising .content {
+    flex-wrap: wrap;
+  }
+}
+.fundraising .content .col {
+  border-radius: 2rem;
+  flex: 0 1 50%;
+  padding: 6rem;
+  overflow: hidden;
+}
+@media (max-width: 992px) {
+  .fundraising .content .col {
+    flex: auto;
+    padding: 2.5rem 1.5rem;
+  }
+}
+.fundraising .content .col:first-child {
+  background-color: #DA7D4A;
+}
+@media (max-width: 992px) {
+  .fundraising .content .col:first-child {
+    margin-bottom: 1.5rem;
+  }
+}
+.fundraising .content .col:last-child {
+  margin-left: 1.5rem;
+  background-color: #334155;
+}
+@media (max-width: 992px) {
+  .fundraising .content .col:last-child {
+    margin-left: 0;
+  }
+}
+.fundraising .content .col:last-child .btn:hover, .fundraising .content .col:last-child .btn.focus {
+  background-color: #334155;
+}
+.fundraising h2 {
+  font-size: 3.25rem;
+  line-height: 1.44;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+@media (max-width: 992px) {
+  .fundraising h2 {
+    font-size: 2.5rem;
+  }
+}
+.fundraising h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.fundraising .buttonBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fundraising .buttonBox .imageWrap {
+  max-width: 224px;
+}
+@media (max-width: 992px) {
+  .fundraising .buttonBox .imageWrap {
+    max-width: 126px;
+  }
+}
+
+.swiper-pagination {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  width: auto !important;
+  flex: 0 0 auto !important;
+  top: inherit !important;
+  left: inherit !important;
+  bottom: inherit !important;
+}
+.swiper-pagination-bullet {
+  font-size: 0;
+  height: 12px;
+  width: 12px;
+  background: #DA7D4A;
+  margin: 0 8px !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: relative;
+  margin: 0;
+  top: inherit;
+  left: inherit;
+  right: inherit;
+  bottom: inherit;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition: all 0.3s ease 0s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #DA7D4A;
+}
+.swiper-button-prev:hover span,
+.swiper-button-next:hover span {
+  color: #ffffff;
+}
+.swiper-button-prev span,
+.swiper-button-next span {
+  color: #DA7D4A;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  content: none;
 }
