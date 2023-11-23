@@ -135,7 +135,17 @@ a {
   }
 }
 
+.ball {
+  @include bg-gradient-x;
+  display: inline-block;
+  border-radius: 50%;
+  font-weight: 900;
+  color: $primary-light;
+  text-align: center;
+}
+
 .labelBox {
+  display: inline-block;
   font-weight: 700;
   padding: .5rem .75rem;
   background: $primary-text;
@@ -193,6 +203,10 @@ a {
   @include text-bg-gradient-x;
 }
 
+.small {
+  font-size: 0.875rem;
+}
+
 .header {
   padding: 1rem 1.5rem;
   position: fixed;
@@ -221,10 +235,16 @@ a {
     font-size: 1.5rem;
     font-weight: 700;
     color: $primary-color;
+    @include respond-to('mobile') {
+      font-size: 1.25rem;
+    }
     .logoImg {
       width: 53px;
       margin-right: 0.5rem;
       line-height: 0;
+      @include respond-to('mobile') {
+        width: 34px;
+      }
     }
   }
 }
@@ -249,6 +269,9 @@ a {
 }
 
 .socailNav {
+  @include respond-to('mobile') {
+    display: none;
+  }
   .nav {
     display: flex;
     justify-content: center;
@@ -294,14 +317,6 @@ a {
   }
 }
 
-.ball {
-  @include bg-gradient-x;
-  display: block;
-  border-radius: 50%;
-  color: $primary-light;
-  text-align: center;
-}
-
 .banner {
   margin: 99px 0 0 0;
   background-color: $primary-light;
@@ -340,10 +355,12 @@ a {
       flex-direction: column;
     }
     .titleBlock {
+      padding: .75rem 1rem;
       font-size: 1.75rem;
       background-color: $primary-text;
       color: $primary-light;
       margin-right: 1rem;
+      border-radius: 1rem;
       @include respond-to('tablet') {
         font-size: 1.25rem;
         margin-right: 0;
@@ -383,6 +400,9 @@ a {
     white-space: nowrap;
     animation: wordScrollX 30s linear infinite;
     animation-play-state: running;
+    @include respond-to('mobile') {
+      font-size: 2.5rem;
+    }
   }
 }
 
@@ -717,6 +737,76 @@ a {
 
 .footer {
   background: $secondary-bg-color;
+  padding: 4rem 0;
+  .content {
+    display: flex;
+    @include respond-to('tablet') {
+      flex-wrap: wrap;
+    }
+    .col {
+      flex: 0 1 50%;
+      @include respond-to('tablet') {
+        flex: 0 1 100%
+      }
+      &:first-child {
+        @include respond-to('tablet') {
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+  }
+  h3 {
+    display: flex;
+    font-size: 1.75rem;
+    align-items: center;
+    color: $primary-color;
+  }
+  h4 {
+    font-size: 1.5rem;
+    color: $primary-text;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .small {
+    color: $primary-text;
+  }
+  .ball {
+    display: inline-block;
+    font-weight: 700;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+  }
+  .footerNav {
+    margin: 1rem 0;
+    .nav {
+      display: flex;
+    }
+    .nav-item {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+    .nav-link {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: $primary-light;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .3s ease 0s;
+      img {
+        width: 28px;
+      }
+      &:hover,&:focus {
+        background-color: rgba($color: $primary-bg-color, $alpha: .45);
+      }
+    }
+  }
 }
 
 // swiper 
