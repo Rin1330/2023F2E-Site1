@@ -56,6 +56,22 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   background: $primary-bg-color;
   color: $primary-text;
+  &.isLoading {
+    overflow: hidden;
+  }
+}
+
+.loadingBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  height: 100dvh;
+  width: 100dvw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
 }
 
 h1,h2,h3,h4,h5,h6,p {
@@ -299,7 +315,6 @@ a {
   color: $primary-color;
   background-color: rgba($color: #ffffff, $alpha: 0.9);
   border: 1px solid #ffffff;
-  letter-spacing: -2px;
   box-shadow: 0px 4px 12px 0px rgba(163,180,203,0.2);
   @include respond-to('tablet') {
     font-size: 1.5rem;
@@ -398,8 +413,10 @@ a {
     letter-spacing: 2px;
     color: $primary-light;
     white-space: nowrap;
-    animation: wordScrollX 30s linear infinite;
-    animation-play-state: running;
+    &.play {
+      animation: wordScrollX 30s linear infinite;
+      animation-play-state: running;
+    }
     @include respond-to('mobile') {
       font-size: 2.5rem;
     }
@@ -447,7 +464,12 @@ a {
     margin-bottom: 2rem;
   }
   .advocateImg {
+    flex: 1;
     width: calc((99% / 2) - 24px);
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
     @include respond-to('tablet') {
       width: 100%;
     }
@@ -804,6 +826,68 @@ a {
       }
       &:hover,&:focus {
         background-color: rgba($color: $primary-bg-color, $alpha: .45);
+      }
+    }
+  }
+}
+
+
+.fixNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #E2E8F0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  transition: display .3s ease 0s, opacity 1.5s ease 0s, visibility 1.5s ease 0s;
+  @include respond-to('desktop') {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav {
+    padding: 0 0.75rem;
+    display: flex;
+    width: 100%;
+  }
+  .nav-item {
+    width: calc(99.99% / 5);
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+  .nav-link {
+    display: block;
+    text-align: center;
+    padding: .75rem 0 1rem;
+    transition: all .3s ease 0s;
+    &:hover {
+      background-color: $secondary-bg-color;
+    }
+    @include respond-to('mobile') {
+      padding: 10px 0;
+    }
+    .img {
+      display: block;
+      margin: 0 auto;
+      width: 24px;
+      margin-bottom: 0.25rem;
+      @include respond-to('mobile') {
+        margin-bottom: 0;
+      }
+    }
+    .nav-text {
+      display: block;
+      color: $primary-text;
+      font-size: 10px;
+      line-height: 12px;
+      transition: all .3s ease 0s;
+      @include respond-to('mobile') {
+        font-size: 0;
+        line-height: 0;
       }
     }
   }

@@ -5,14 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>喵立翰 - 立委競選官網</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
-<body>
-  <header class="header">
+<body class="isLoading">
+  <div class="loadingBox">
+    <lottie-player id="loading" count="3" mode="normal" src="./assets/js/loading.json" background="transparent"
+      speed="1" loop direction="1" style="width: 320px; height: 320px;"></lottie-player>
+  </div>
+  <header class="header ">
     <div class="headerNav">
-      <a href="#" class="logo"><img src="./assets/images/logo.svg" class="logoImg" alt="Logo">喵立翰 Miao Li-Han</a>
+      <a href="#" class="logo"><img src="./assets/images/logo.svg" class="logoImg" alt="Logo"><span id="logoText">喵立翰
+          Miao Li-Han</span></a>
       <nav class="mainNav">
         <ul class="nav">
           <li class="nav-item"><a class="nav-link" href="javascript:;">候選人主張</a></li>
@@ -49,19 +61,19 @@
             <path
               d="M0.5 361.684C0.5 162.034 162.349 0.184448 362 0.184448C561.651 0.184448 723.5 162.034 723.5 361.684V404.184H0.5V361.684Z"
               fill="url(#paint0_linear_4819_2235)" />
-            <path
+            <path id="rightBottom-cloud"
               d="M754.341 286.52C752.586 286.52 750.901 286.795 749.314 287.293C748.174 276.47 739.009 268.031 727.869 268.031C724.857 268.031 721.991 268.651 719.386 269.765C719.416 269.272 719.462 268.784 719.462 268.28C719.462 254.646 708.399 243.594 694.751 243.594C683.739 243.594 674.416 250.798 671.225 260.741C669.378 260.035 667.383 259.633 665.286 259.633C658.167 259.633 652.106 264.096 649.709 270.37C647.216 268.89 644.315 268.021 641.206 268.021C631.995 268.021 624.525 275.484 624.525 284.685C624.525 286.901 624.967 289.016 625.756 290.953C617.237 294.079 611.151 302.233 611.151 311.826C611.151 324.118 621.125 334.082 633.43 334.082C640.198 334.082 646.254 331.057 650.34 326.294C655.648 330.808 662.523 333.543 670.039 333.543C673.698 333.543 677.204 332.898 680.456 331.713C685.306 336.212 691.794 338.967 698.934 338.967C708.771 338.967 717.386 333.747 722.154 325.923C724.724 327.54 727.757 328.49 731.019 328.49C738.082 328.49 744.108 324.098 746.54 317.901C748.866 319.131 751.517 319.838 754.336 319.838C763.547 319.838 771.018 312.38 771.018 303.174C771.018 293.978 763.552 286.52 754.341 286.52Z"
               fill="white" />
-            <path
+            <path id="leftBottom-cloud"
               d="M185.837 344.737C185.909 357.491 178.969 368.662 168.657 374.639L-11.2368 375.627C-14.9293 370.643 -17.1684 364.469 -17.2077 357.798C-17.2994 340.957 -3.69455 327.268 13.1118 327.176C19.253 327.144 24.9686 328.942 29.7807 332.036C33.5911 319.91 44.911 311.074 58.3194 311.002C58.1819 285.39 78.8576 264.507 104.489 264.37C130.128 264.226 151.033 284.887 151.17 310.492C170.189 310.388 185.732 325.692 185.837 344.737Z"
               fill="white" />
-            <path
+            <path id="right-cloud"
               d="M573.387 230.97C572.71 230.97 572.06 231.073 571.452 231.27C571.562 230.693 571.616 230.102 571.616 229.495C571.616 223.938 567.104 219.437 561.541 219.437C558.393 219.437 555.578 220.881 553.731 223.14C552.286 215.97 545.949 210.573 538.342 210.573C535.148 210.573 532.172 211.526 529.694 213.167C529.728 212.897 529.743 212.621 529.743 212.339C529.743 208.419 526.564 205.237 522.641 205.237C521.66 205.237 520.722 205.435 519.865 205.799C519.549 200.414 515.077 196.143 509.608 196.143C505.949 196.143 502.736 198.058 500.914 200.942C499.004 200.053 496.873 199.562 494.626 199.562C486.348 199.562 479.641 206.263 479.641 214.532C479.641 216.534 480.035 218.442 480.752 220.183C475.21 221.15 471.005 225.983 471.005 231.795C471.005 238.313 476.291 243.594 482.817 243.594H573.387C576.876 243.594 579.706 240.77 579.706 237.282C579.706 233.794 576.879 230.97 573.387 230.97Z"
               fill="white" />
-            <path
+            <path id="left-cloud"
               d="M35.2873 150.738C35.2873 155.394 36.9225 159.67 39.6454 163.027H152.298C152.628 162.852 152.95 162.666 153.273 162.472C160.222 158.274 164.863 150.653 164.863 141.949C164.863 128.71 154.119 117.965 140.866 117.965H140.583C139.231 110.705 132.857 105.223 125.197 105.223C121.538 105.223 118.17 106.476 115.506 108.575C114.472 109.382 113.548 110.313 112.759 111.357C112.002 110.046 111.124 108.812 110.134 107.683C105.853 102.782 99.5451 99.6932 92.53 99.6932C81.6696 99.6932 72.5531 107.081 69.9235 117.104C69.8069 117.523 69.7098 117.958 69.6127 118.388C68.6883 118.117 67.7055 117.969 66.684 117.969C60.9119 117.969 56.2314 122.645 56.2314 128.411C56.2314 129.404 56.3673 130.355 56.6198 131.259C56.0566 131.201 55.47 131.17 54.8874 131.17C53.524 131.17 52.1917 131.306 50.9176 131.577C41.9915 133.417 35.2873 141.301 35.2873 150.738Z"
               fill="white" />
-            <path
+            <path id="head-cloud"
               d="M310.736 27.7367C309.876 27.7337 309.038 27.8247 308.227 27.9915C305.394 20.9784 298.535 16.0128 290.494 15.9734C287.774 15.9612 285.186 16.5163 282.836 17.5204C281.005 7.69531 272.409 0.236277 262.039 0.18471C250.294 0.127076 240.729 9.5942 240.671 21.3242C240.668 21.6427 240.677 21.9582 240.689 22.2706C240.431 22.2524 240.176 22.2282 239.915 22.2282C233.08 22.1948 227.511 27.7034 227.478 34.5345C227.444 41.3656 232.958 46.9258 239.797 46.9592C240.422 46.9622 241.036 46.9046 241.637 46.8166C242.305 52.7408 247.312 57.3606 253.428 57.3879C257.6 57.4091 261.274 55.2827 263.424 52.0552C265.085 53.2473 267.113 53.9632 269.312 53.9753C272.797 53.9935 275.88 52.2554 277.729 49.5951C281.09 52.5436 285.487 54.3454 290.312 54.3697C295.426 54.3939 300.08 52.4162 303.539 49.1796C305.516 50.6599 307.96 51.5547 310.623 51.5668C317.213 51.5972 322.578 46.2888 322.611 39.7064C322.642 33.1301 317.325 27.7671 310.736 27.7367Z"
               fill="white" />
           </g>
@@ -85,8 +97,8 @@
       </div>
     </div>
   </section>
-  
-  <section class="solgan">
+
+  <section class="solgan" id="solgan">
     <p class="font-mantou">為喵星人，護台灣！ 從喵的眼中，看見台灣 喵的未來，人的希望</p>
   </section>
 
@@ -103,7 +115,9 @@
           <p>畢竟，民眾的身心健康與工作熱情是推動經濟的核心動力。透過完善的貓咪福利政策，為台灣的 GDP 經濟帶來巨大效益。</p>
           <p>因此，我期望能在立法院內推進這些政策，確保每一隻貓咪都能得到他們應有的照顧，同時也為台灣的經濟發展助一臂之力。讓我們一同護航台灣的幸福經濟，從照顧每一隻貓咪開始。</p>
         </div>
-        <img src="./assets/images/advocate.png" alt="" class="advocateImg">
+        <div class="advocateImg">
+          <img src="./assets/images/advocate.png" alt="">
+        </div>
       </div>
     </div>
   </section>
@@ -158,7 +172,8 @@
               </a>
             </li>
           </ul>
-          <button class="btn btn-secondary" role="button">查看更多<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+          <button class="btn btn-secondary" role="button">查看更多<span
+              class="material-symbols-outlined arrow">arrow_forward</span></button>
         </div>
       </div>
     </div>
@@ -180,7 +195,8 @@
               <div class="card-body">
                 <span class="card-chip chip-3">喵的保障</span>
                 <h3 class="card-title">為毛孩子謀福利！<br>推動寵物醫療保障方案</h3>
-                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+                <button class="btn btn-primary" role="button">查看<span
+                    class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
           </div>
@@ -190,7 +206,8 @@
               <div class="card-body">
                 <span class="card-chip">喵的教育</span>
                 <h3 class="card-title">推廣寵物飼養教育，<br>讓愛更加專業</h3>
-                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+                <button class="btn btn-primary" role="button">查看<span
+                    class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
           </div>
@@ -200,7 +217,8 @@
               <div class="card-body">
                 <span class="card-chip chip-2">喵的福利</span>
                 <h3 class="card-title">為打造休閒天堂！<br>推廣寵物休閒與娛樂場所</h3>
-                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+                <button class="btn btn-primary" role="button">查看<span
+                    class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
           </div>
@@ -210,7 +228,8 @@
               <div class="card-body">
                 <span class="card-chip chip-3">喵的保障</span>
                 <h3 class="card-title">為毛孩子謀福利！<br>推動寵物醫療保障方案</h3>
-                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+                <button class="btn btn-primary" role="button">查看<span
+                    class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
           </div>
@@ -220,7 +239,8 @@
               <div class="card-body">
                 <span class="card-chip">喵的教育</span>
                 <h3 class="card-title">推廣寵物飼養教育，<br>讓愛更加專業</h3>
-                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+                <button class="btn btn-primary" role="button">查看<span
+                    class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
           </div>
@@ -230,7 +250,8 @@
               <div class="card-body">
                 <span class="card-chip chip-2">喵的福利</span>
                 <h3 class="card-title">為打造休閒天堂！<br>推廣寵物休閒與娛樂場所</h3>
-                <button class="btn btn-primary" role="button">查看<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+                <button class="btn btn-primary" role="button">查看<span
+                    class="material-symbols-outlined arrow">arrow_forward</span></button>
               </div>
             </a>
           </div>
@@ -252,7 +273,8 @@
           <h3>您的小筆捐款，是每隻毛孩未來的大大動力！</h3>
           <div class="buttonBox">
             <div>
-              <button class="btn" role="button">小額捐款<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+              <button class="btn" role="button">小額捐款<span
+                  class="material-symbols-outlined arrow">arrow_forward</span></button>
             </div>
             <div class="imageWrap">
               <img src="./assets/images/fundraising1.png" alt="">
@@ -264,7 +286,8 @@
           <h3>親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</h3>
           <div class="buttonBox">
             <div>
-              <button class="btn" role="button">填寫表單<span class="material-symbols-outlined arrow">arrow_forward</span></button>
+              <button class="btn" role="button">填寫表單<span
+                  class="material-symbols-outlined arrow">arrow_forward</span></button>
             </div>
             <div class="imageWrap">
               <img src="./assets/images/fundraising2.png" alt="">
@@ -284,6 +307,21 @@
     </div>
   </section>
 
+  <nav class="fixNav">
+    <ul class="nav">
+      <li class="nav-item"><a href="javascript:;" class="nav-link"><img class="img"
+            src="./assets/images/navIcon1.png"><span class="nav-text">候選人主張</span></a></li>
+      <li class="nav-item"><a href="javascript:;" class="nav-link"><img class="img"
+            src="./assets/images/navIcon2.png"><span class="nav-text">最新活動</span></a></li>
+      <li class="nav-item"><a href="javascript:;" class="nav-link"><img class="img"
+            src="./assets/images/navIcon3.png"><span class="nav-text">政策議題</span></a></li>
+      <li class="nav-item"><a href="javascript:;" class="nav-link"><img class="img"
+            src="./assets/images/navIcon4.png"><span class="nav-text">小額捐款</span></a></li>
+      <li class="nav-item"><a href="javascript:;" class="nav-link"><img class="img"
+            src="./assets/images/navIcon5.png"><span class="nav-text">服務信箱</span></a></li>
+    </ul>
+  </nav>
+
   <footer class="footer">
     <div class="container">
       <div class="content">
@@ -291,9 +329,12 @@
           <h3><span class="ball">3</span>喵立翰 Miao Li-Han</h3>
           <div class="footerNav">
             <ul class="nav">
-              <li class="nav-item"><a class="nav-link" href="javascript:;"><img src="./assets/images/icon-fb.png" alt="Facebook"></a></li>
-              <li class="nav-item"><a class="nav-link" href="javascript:;"><img src="./assets/images/icon-ig.png" alt="IG"></a></li>
-              <li class="nav-item"><a class="nav-link" href="javascript:;"><img src="./assets/images/icon-yt.png" alt="Youtube"></a></li>
+              <li class="nav-item"><a class="nav-link" href="javascript:;"><img src="./assets/images/icon-fb.png"
+                    alt="Facebook"></a></li>
+              <li class="nav-item"><a class="nav-link" href="javascript:;"><img src="./assets/images/icon-ig.png"
+                    alt="IG"></a></li>
+              <li class="nav-item"><a class="nav-link" href="javascript:;"><img src="./assets/images/icon-yt.png"
+                    alt="Youtube"></a></li>
             </ul>
           </div>
           <p class="small">© 2023 喵立翰 Miao Li-Han 版權所有</p>
@@ -314,7 +355,49 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
+
+  (function () {
+    const session = sessionStorage;
+    const bodyDom = document.querySelector('body');
+    const loadingBox = document.querySelector('.loadingBox');
+    const loading = document.querySelector('#loading');
+    const solgan = document.querySelector('#solgan p');
+
+    function finishLoading() {
+      bodyDom.classList.remove('isLoading');
+      setTimeout(() => {
+        solgan.classList.add('play');
+        loadingBox.remove()
+      }, 400);
+    }
+
+    function playLoading() {
+      setTimeout(() => {
+        loading.play();
+      }, 100);
+    }
+
+    if (session && session.getItem('loading') === "true") {
+      // console.log(session.getItem());
+      loading.setLooping(false)
+      playLoading()
+    } else {
+      loading.addEventListener('ready', e => {
+        playLoading();
+      })
+      session.setItem('loading', "true")
+    }
+
+    loading.addEventListener('complete', () => {
+      finishLoading();
+    })
+  })();
+
+  // const logoTxt = document.querySelector('#logoText');
+
   const policySwiper = new Swiper('#policySwiper', {
     loop: true,
     slidesPerView: 'auto',
@@ -324,16 +407,16 @@
     },
     centeredSlides: true,
     pagination: {
-    el: '#policySwiper .swiper-pagination',
+      el: '#policySwiper .swiper-pagination',
       renderBullet: function (index, className) {
-      return `<a class="${className}">${index + 1}</a>`;
+        return `<a class="${className}">${index + 1}</a>`;
+      },
+      clickable: true,
     },
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '#policySwiper .swiper-button-next',
-    prevEl: '#policySwiper .swiper-button-prev',
-  },
+    navigation: {
+      nextEl: '#policySwiper .swiper-button-next',
+      prevEl: '#policySwiper .swiper-button-prev',
+    },
 
   });
 </script>
