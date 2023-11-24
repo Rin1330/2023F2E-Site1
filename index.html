@@ -13,6 +13,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css">
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
@@ -356,8 +357,21 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.28/bundled/lenis.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+
+<script>  
+
+  // lenis 
+  let lenis = null;
+  function lenisInit() {
+    lenis = new Lenis();
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(time => lenis.raf(time * 1000))
+    gsap.ticker.lagSmoothing(0);
+  }
 
   (function () {
     const session = sessionStorage;
@@ -367,11 +381,19 @@
     const solgan = document.querySelector('#solgan p');
 
     function finishLoading() {
+      // remove loading effect
       bodyDom.classList.remove('isLoading');
+      lenisInit();
+      lenis.scrollTo(0, { immediate: true});
+      gsap.to('.loadingBox', {
+        scale: 0,
+        duration: .5,
+        ease: "power4.out",
+        onComplete: () => loadingBox.remove()
+      });
       setTimeout(() => {
         solgan.classList.add('play');
-        loadingBox.remove()
-      }, 400);
+      }, 300);
     }
 
     function playLoading() {
@@ -396,7 +418,38 @@
     })
   })();
 
-  // const logoTxt = document.querySelector('#logoText');
+
+  Swal.fire("SweetAlert2 is working!");
+  
+  // gsap function 
+  function gsapInit () {
+    console.log('fn gsapinit');
+    const headerTimeLine = gsap.timeline({ paused: true})
+    headerTimeLine.to('.headerNav', {
+      opacity: 0.95,
+      backgroundColor: '#ff0000',
+      duration: 0.75,
+      ease: 'power4.out',
+    })
+
+    ScrollTrigger.create({
+      trigger: '.advocate',
+      strat: "top top",
+      onEnter: () => {
+        headerTimeLine.play();
+      },
+      onLeaveBack: () => {
+        headerTimeLine.reverse();
+      }
+    })
+  }
+  gsapInit()
+
+  const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+      console.log(mutation);
+    })
+  })
 
   const policySwiper = new Swiper('#policySwiper', {
     loop: true,
